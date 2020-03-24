@@ -1,6 +1,8 @@
 package JDBCintro.Merchant1.Entities;
 
+import java.sql.Date;
 import java.sql.Timestamp;
+import java.util.List;
 
 public class Payment {
     private int id;
@@ -10,6 +12,7 @@ public class Payment {
     private String goods;
     private double sumPaid;
     private double chargePaid;
+
 
     public Payment(int id, Timestamp dt, Merchant merchantId, Customer customerId, String goods, double sumPaid, double chargePaid) {
         this.id = id;
@@ -33,9 +36,15 @@ public class Payment {
     public Payment() {
     };
 
-// not sure if this one correct tu use
-    public Payment(int id, Timestamp dt, String merchantId, String customerId, String goods, Double sumPaid, Double chargePaid) {
+    public Payment(int id, Timestamp dt, String goods, Double sumPaid, Double chargePaid) {
     }
+
+    public Payment(Double totalSumPaid, String title, Integer id, Date lastSent) {
+
+    }
+// not sure if this one correct to use
+//    public Payment(int id, Timestamp dt, String merchantId, String customerId, String goods, Double sumPaid, Double chargePaid) {
+//    }
 
 
     public int getId() {

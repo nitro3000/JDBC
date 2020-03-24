@@ -13,20 +13,15 @@ public class CustomerService {
         this.customerRepository = customerRepository;
     }
 
-    public List<Customer> getAll(){
-        return customerRepository.getAll ( );
-    }
-
     public void showAll() {
         for (Customer i : this.getAll ( )) {
             System.out.println (i);
         }
     }
+    public List<Customer> getAll() {
+        return customerRepository.getAll ( );
+    }
 
-//    public void showById(int id) {
-//        Customer cust1 = getById (id);
-//        System.out.println (cust1 );
-//    }
 
     public Customer getById(int id) {
         Customer cust1 = customerRepository.getById (id);
@@ -35,6 +30,6 @@ public class CustomerService {
 
 
     public List<Customer> filterBYCreteria() {
-        return this.getAll ().stream ().filter (item -> item.getName ().length () > 10).collect(Collectors.toList());
+        return this.getAll ( ).stream ( ).filter (item -> item.getName ( ).length ( ) > 10).collect (Collectors.toList ( ));
     }
 }

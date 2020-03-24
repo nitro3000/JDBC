@@ -1,6 +1,7 @@
 package JDBCintro.Merchant1.Entities;
 
 import java.sql.Date;
+import java.util.List;
 
 public class Customer {
     private int id;
@@ -10,6 +11,7 @@ public class Customer {
     private String ccNo;
     private String ccType;
     private Date maturity;
+    private List<Payment>payments;
 
     //todo  convert java.sql.Date  to localDate format(do not use Java
     //String str = "2000-10-10"
@@ -100,6 +102,14 @@ public class Customer {
 
     public void setMaturity(Date maturity) {
         this.maturity = maturity;
+    }
+
+    public List<Payment> getPayments() {
+        return payments;
+    }
+
+    public void setPayments(List<Payment> payments) {
+        this.payments = payments;
     }
 
     @Override

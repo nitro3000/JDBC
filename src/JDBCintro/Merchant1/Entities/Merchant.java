@@ -1,6 +1,8 @@
 package JDBCintro.Merchant1.Entities;
 
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Merchant {
     private int id;
@@ -14,6 +16,16 @@ public class Merchant {
     private double needToSend;
     private double sent;
     private Date lastSent;
+    List<Payment> payments=new ArrayList<> ();
+
+    public List<Payment> getPayments() {
+        return payments;
+    }
+    public void setPayments(List<Payment> payments) {
+        this.payments = payments;
+    }
+
+
 
     public Merchant(int id, String title, String bankName, String swift, String account, double charge,
                     int period, double minSum, double needToSend, double sent, Date lastSent) {
@@ -44,7 +56,7 @@ public class Merchant {
         this.lastSent = lastSent;
     }
 
-    public Merchant(int id) {
+    public Merchant() {
     };
 
 
